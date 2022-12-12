@@ -135,7 +135,7 @@ public:
 		cout << result << endl;
 	}
 
-	void Print(int b) {
+	void PrintAtoms(int b) {
 		cout << "Name = " << array[b].get_name() << endl;
 		cout << "Atom mass = " << array[b].get_atommass() << endl;
 		cout << "Neutron num = " << array[b].get_neutron() << endl;
