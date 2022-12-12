@@ -47,15 +47,15 @@ int main()
 	const int size = sizeof molecule / sizeof molecule.array[0];
 
 	for (int i = 0; i < size; i++) {
-		mol.Print(i);
+		molecule.Print(i);
 		cout << molecule.array[i].isNeutral() << endl;
 		cout << "-------------------" << endl;
 	}
 	cout << "AVG Mass = ";
-	mol.FindAverageMass(s);
+	molecule.FindAverageMass(s);
 
 	cout << "---------Sort by Atom mass--------" << endl;
-	mol.SortAtoms(s);
+	molecule.SortAtoms(s);
 	cout << endl;
 
 }
