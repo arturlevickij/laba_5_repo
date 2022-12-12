@@ -47,7 +47,7 @@ int main()
 	const int size = sizeof molecule / sizeof molecule.array[0];
 
 	for (int i = 0; i < size; i++) {
-		molecule.Print(i);
+		molecule.PrintAtoms(i);
 		cout << molecule.array[i].isNeutral() << endl;
 		cout << "-------------------" << endl;
 	}
