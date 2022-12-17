@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include "Header.h"
 using namespace std;
 
@@ -10,13 +10,13 @@ int main()
 	Atom yod("Yod", 61, 34, 14, 34);
 	Atom ftor("Ftor", 43, 27, 18, 7);
 
-	Molecule molecule;
+	Molecule mol;
 
-	molecule.array[0] = azot;
-	molecule.array[1] = oxygen;
-	molecule.array[2] = hydrogen;
-	molecule.array[3] = yod;
-	molecule.array[4] = ftor;
+	mol.array[0] = azot;
+	mol.array[1] = oxygen;
+	mol.array[2] = hydrogen;
+	mol.array[3] = yod;
+	mol.array[4] = ftor;
 
 	azot.set_atom_type(Type::ION);
 	oxygen.set_atom_type(Type::RADIOACTIVE);
@@ -44,19 +44,21 @@ int main()
 	cout << "\n";
 
 
-	const int size = sizeof molecule / sizeof molecule.array[0];
+	const int s = sizeof mol / sizeof mol.array[0];
 
-	for (int i = 0; i < size; i++) {
-		molecule.PrintAtoms(i);
-		cout << molecule.array[i].isNeutral() << endl;
+	for (int i = 0; i < s; i++) {
+		mol.Print(i);
+		cout << mol.array[i].isNeutral() << endl;
 		cout << "-------------------" << endl;
 	}
 	cout << "AVG Mass = ";
-	molecule.FindAverageMass(s);
+	mol.findAverageMass(s);
 
 	cout << "---------Sort by Atom mass--------" << endl;
-	molecule.SortAtoms(s);
+	mol.SortAtoms(s);
 	cout << endl;
+
+}
 
 }
 
