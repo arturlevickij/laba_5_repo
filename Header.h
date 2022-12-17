@@ -12,10 +12,10 @@ enum Type {
 class Atom {
 
 	string name;
-	int atomic_mass_unit;
-	int neutrons_number;
-	int protons_number;
-	int electrons_number;
+	float atomic_mass_unit;
+	float neutrons_number;
+	float protons_number;
+	float electrons_number;
 	Type atom_type;
 
 public:
@@ -25,7 +25,7 @@ public:
 
 	}
 
-	Atom(string name, int atomic_mass_unit, int neutrons_number, int protons_number, int electrons_number) {
+	Atom(string name, float atomic_mass_unit, float neutrons_number, float protons_number, float electrons_number) {
 		this->name = name;
 		this->atomic_mass_unit = atomic_mass_unit;
 		this->neutrons_number = neutrons_number;
@@ -40,16 +40,16 @@ public:
 	string get_name() {
 		return name;
 	}
-	int get_atommass() {
+	float get_atommass() {
 		return atomic_mass_unit;
 	}
-	int get_neutron() {
+	float get_neutron() {
 		return neutrons_number;
 	}
-	int get_proton() {
+	float get_proton() {
 		return protons_number;
 	}
-	int get_electron() {
+	float get_electron() {
 		return electrons_number;
 	}
 	string set_name() {
@@ -59,19 +59,19 @@ public:
 	void set_atom_type(Type atom_type) {
 		this->atom_type = atom_type;
 	}
-	int set_atommass() {
+	float set_atommass() {
 		this->atomic_mass_unit = atomic_mass_unit;
 		return atomic_mass_unit;
 	}
-	int set_neutron() {
+	float set_neutron() {
 		this->neutrons_number = neutrons_number;
 		return neutrons_number;
 	}
-	int set_proton() {
+	float set_proton() {
 		this->protons_number = protons_number;
 		return protons_number;
 	}
-	int set_electron() {
+	float set_electron() {
 		this->electrons_number = electrons_number;
 		return electrons_number;
 	}
@@ -97,7 +97,7 @@ class Molecule {
 
 public:
 	Atom array[5];
-	float res = 0;
+	float result = 0;
 
 	void swap(Atom* xp, Atom* yp)
 	{
@@ -127,15 +127,15 @@ public:
 		}
 	}
 
-	void findAverageMass(int size) {
+	void FindAverageMass(int size) {
 		for (int i = 0; i < size; i++) {
-			res += array[i].get_atommass();
+			result += array[i].get_atommass();
 		}
-		res = res / size;
-		cout << res << endl;
+		result = result / size;
+		cout << result << endl;
 	}
 
-	void Print(int b) {
+	void PrintAtoms(int b) {
 		cout << "Name = " << array[b].get_name() << endl;
 		cout << "Atom mass = " << array[b].get_atommass() << endl;
 		cout << "Neutron num = " << array[b].get_neutron() << endl;
