@@ -4,19 +4,19 @@ using namespace std;
 
 int main()
 {
-	Atom azot("Azot", 23, 12, 11, 12);
-	Atom oxygen("Oxygen", 16, 11, 16, 5);
-	Atom hydrogen("Hydrogen", 50, 17, 20, 18);
-	Atom yod("Yod", 61, 34, 14, 34);
-	Atom ftor("Ftor", 43, 27, 18, 7);
+	Atom azot("Azot", 23.5, 12.5, 11.1, 12.7);
+	Atom oxygen("Oxygen", 16.1, 11.7, 16.3, 5.1);
+	Atom hydrogen("Hydrogen", 50.3, 17.5, 20.5, 18.7);
+	Atom yod("Yod", 61.7, 34.7, 14.1, 34.7);
+	Atom ftor("Ftor", 43.9, 27.5, 18.5, 7.1);
 
-	Molecule mol;
+	Molecule molecule;
 
-	mol.array[0] = azot;
-	mol.array[1] = oxygen;
-	mol.array[2] = hydrogen;
-	mol.array[3] = yod;
-	mol.array[4] = ftor;
+	molecule.array[0] = azot;
+	molecule.array[1] = oxygen;
+	molecule.array[2] = hydrogen;
+	molecule.array[3] = yod;
+	molecule.array[4] = ftor;
 
 	azot.set_atom_type(Type::ION);
 	oxygen.set_atom_type(Type::RADIOACTIVE);
@@ -44,21 +44,19 @@ int main()
 	cout << "\n";
 
 
-	const int s = sizeof mol / sizeof mol.array[0];
+	const int s = sizeof molecule / sizeof molecule.array[0];
 
 	for (int i = 0; i < s; i++) {
-		mol.Print(i);
-		cout << mol.array[i].isNeutral() << endl;
+		molecule.PrintAtoms(i);
+		cout << molecule.array[i].isNeutral() << endl;
 		cout << "-------------------" << endl;
 	}
 	cout << "AVG Mass = ";
-	mol.findAverageMass(s);
+	molecule.FindAverageMass(s);
 
 	cout << "---------Sort by Atom mass--------" << endl;
-	mol.SortAtoms(s);
+	molecule.SortAtoms(s);
 	cout << endl;
-
-}
 
 }
 
