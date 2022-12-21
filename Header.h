@@ -97,7 +97,7 @@ class Molecule {
 
 public:
 	Atom array[5];
-	float result = 0;
+	int result = 0;
 
 	void swap(Atom* xp, Atom* yp)
 	{
@@ -106,7 +106,7 @@ public:
 		*yp = temp;
 	}
 
-	void SortAtoms(int size) {
+	void sort_atoms(int size) {
 		{
 			for (int i = 0; i < size - 1; i++) {
 				for (int j = 0; j < size - i - 1; j++) {
@@ -127,7 +127,7 @@ public:
 		}
 	}
 
-	void FindAverageMass(int size) {
+	void find_average_mass(int size) {
 		for (int i = 0; i < size; i++) {
 			result += array[i].get_atommass();
 		}
@@ -135,7 +135,7 @@ public:
 		cout << result << endl;
 	}
 
-	void PrintAtoms(int b) {
+	void print_atoms(int b) {
 		cout << "Name = " << array[b].get_name() << endl;
 		cout << "Atom mass = " << array[b].get_atommass() << endl;
 		cout << "Neutron num = " << array[b].get_neutron() << endl;
