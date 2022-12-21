@@ -10,13 +10,13 @@ int main()
 	Atom yod("Yod", 61.7, 34.7, 14.1, 34.7);
 	Atom ftor("Ftor", 43.9, 27.5, 18.5, 7.1);
 
-	Molecule molecule;
+	Molecule moleculate;
 
-	molecule.array[0] = azot;
-	molecule.array[1] = oxygen;
-	molecule.array[2] = hydrogen;
-	molecule.array[3] = yod;
-	molecule.array[4] = ftor;
+	moleculate.array[0] = azot;
+	moleculate.array[1] = oxygen;
+	moleculate.array[2] = hydrogen;
+	moleculate.array[3] = yod;
+	moleculate.array[4] = ftor;
 
 	azot.set_atom_type(Type::ION);
 	oxygen.set_atom_type(Type::RADIOACTIVE);
@@ -44,21 +44,18 @@ int main()
 	cout << "\n";
 
 
-	const int s = sizeof molecule / sizeof molecule.array[0];
+	const int s = sizeof moleculate / sizeof moleculate.array[0];
 
 	for (int i = 0; i < s; i++) {
-		molecule.PrintAtoms(i);
-		cout << molecule.array[i].isNeutral() << endl;
+		moleculate.print_atoms(i);
+		cout << moleculate.array[i].isNeutral() << endl;
 		cout << "-------------------" << endl;
 	}
 	cout << "AVG Mass = ";
-	molecule.FindAverageMass(s);
+	moleculate.find_average_mass(s);
 
 	cout << "---------Sort by Atom mass--------" << endl;
-	molecule.SortAtoms(s);
+	moleculate.sort_atoms(s);
 	cout << endl;
 
 }
-
-
-
